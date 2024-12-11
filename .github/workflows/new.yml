@@ -1,0 +1,46 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build the website (if needed)
+        run: |
+          # If you're using any build tools or a static site generator, include the build step here
+          # For example, npm build command if using npm-based tools
+          # npm install
+          # npm run build
+          
+      - name: Upload the `day-1` folder contents to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './day-1'  # Ensure to upload the contents of your `day-1` folder
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
