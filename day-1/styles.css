@@ -1,0 +1,129 @@
+/* Base styling for body and container */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  background-image: url('snowybg.png');
+  background-size: cover;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
+  border-radius: 15px;
+  font-family: 'Poppins';
+  color: #054787;
+}
+
+/* Styling the heading */
+h1 {
+  font-size: 3em;
+  margin: .25em 0 .75em 0;
+  font-family: 'Caveat';
+}
+
+/* Styling the input field and buttons */
+label, button, input::placeholder {
+    font-family: 'Poppins'
+}
+
+input::placeholder {
+    font-size: .8em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#item-input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #054787;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover, button:focus {
+  background-color: #218838;
+}
+
+button:active {
+    background-color: #FFC300;
+    color: black;
+}
+
+/* Styling the label */
+label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    align-self: flex-start;
+    margin-left: 1px;
+    background-color: white;
+    padding: 0 10px;
+}
+
+/* Styling the shopping list */
+#shopping-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#shopping-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 1.9em;
+  font-family: 'Caveat';
+  background-color: #f0f8ff;
+  border: 1px solid #ddd;
+}
+
+#shopping-list li button {
+  margin-left: 10px;
+  padding: 5px 10px; /* Reduced padding for smaller buttons */
+  font-size: 1.2em; /* Smaller font size */
+  border-radius: 50%; /* Make buttons circular */
+  border: 1px solid #ccc; /* Light border for buttons */
+}
+
+/* Edit button styling */
+.edit-button {
+  color: blue;
+}
+
+/* Delete button styling */
+.delete-button {
+  color: red;
+}
+
+/* Hover effects for buttons */
+button:hover {
+  opacity: 0.7;
+}
