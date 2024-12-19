@@ -1,0 +1,148 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h2 {
+  margin: 20px;
+  color: darkred;
+  font-size: 24px;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  margin-bottom: 20px;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+}
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns for all devices */
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: tomato;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.calendar-box {
+  background-color: #ff0000;
+  color: #ff9999;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px; /* Reduced padding */
+  border: 1px dashed black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.calendar-box:hover {
+  background-color: #ff5555;
+  transform: scale(1.1);
+}
+
+.calendar-box.opened {
+  background-color: green;
+  color: white;
+}
+
+.calendar-box p {
+  margin: 5px 0;
+}
+
+/* Media Query for Tablets and Mid-Sized Screens (iPads, Tablets) */
+@media (max-width: 1024px) {
+  .calendar-container {
+    grid-template-columns: repeat(4, 1fr); /* Keep 4 columns on tablets */
+    padding: 15px;
+    max-width: 90%; /* Reduce width for better fit on tablets */
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .calendar-box {
+    font-size: 16px;
+    padding: 10px; /* Reduced padding for tablets */
+  }
+}
+
+/* Media Query for Laptop and Larger Screens (min-width 1025px) */
+@media (min-width: 1025px) {
+  .calendar-container {
+    grid-template-columns: repeat(5, 1fr); /* Change to 5 columns for laptop screens and larger */
+    padding: 30px;
+    max-width: 1200px; /* Increase width for better use of space */
+  }
+
+  h2 {
+    font-size: 28px; /* Increase font size for headers on larger screens */
+  }
+
+  h4 {
+    font-size: 18px; /* Slightly increase font size for subheading */
+  }
+
+  .calendar-box {
+    font-size: 18px; /* Increase font size for better readability */
+    padding: 12px; /* Reduced padding */
+  }
+}
+
+/* Media Query for Small Mobile Screens, Very Small Devices (iPhone 5, etc.) */
+@media (max-width: 360px) {
+  .calendar-container {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns only on very small screens (below 360px) */
+  }
+
+  h2 {
+    font-size: 14px; /* Smaller font size for very small screens */
+  }
+
+  h4 {
+    font-size: 10px; /* Smaller subheading font size */
+  }
+
+  .calendar-box {
+    font-size: 12px; /* Smaller font size for the boxes */
+    padding: 6px; /* Reduced padding */
+  }
+}
+
+/* For screens 361px to 480px (iPhones, Small Androids) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .calendar-container {
+    grid-template-columns: repeat(4, 1fr); /* Keep 4 columns for small screens (like iPhones) */
+  }
+
+  h2 {
+    font-size: 16px; /* Adjust font size for iPhones */
+  }
+
+  h4 {
+    font-size: 12px; /* Adjust subheading font size */
+  }
+
+  .calendar-box {
+    font-size: 14px; /* Adjust box font size */
+    padding: 8px; /* Reduced padding */
+  }
+}
